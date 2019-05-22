@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:handler name="cmpEvent" event="c:messageEvent" action="{!c.receiverMessageFromSender}"/>
+    <aura:attribute name="receiveData" type="String" default="Enter name"/>
+    <p>{!v.receiveData}</p> 
+    <c:SendMessage/>
+</aura:component>
