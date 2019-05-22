@@ -76,9 +76,7 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>similarProducts</componentName>
-        </componentInstances>
+       
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>

@@ -156,12 +156,7 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <componentInstances>
-            <componentName>accEdit</componentName>
-        </componentInstances>
-        <componentInstances>
-            <componentName>accountMap</componentName>
-        </componentInstances>
+       
         <componentInstances>
             <componentInstanceProperties>
                 <name>tabs</name>
