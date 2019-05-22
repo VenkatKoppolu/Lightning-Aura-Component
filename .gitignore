@@ -1,0 +1,14 @@
+force:lightning-aura/force-app/main/default/triggers/CreateDummyAccount.trigger
+force:lightning-aura/force-app/main/default/triggers/CreateDummyAccount.trigger-meta.xml
+force:lightning-aura/force-app/main/default/triggers/PushNotificationTrigger.trigger
+force:lightning-aura/force-app/main/default/triggers/PushNotificationTrigger.trigger-meta.xml
+force:lightning-aura/force-app/main/default/triggers/RejectDuplicateFavorite.trigger
+force:lightning-aura/force-app/main/default/triggers/RejectDuplicateFavorite.trigger-meta.xml
+force:lightning-aura/force-app/main/default/triggers/UpdateCorrespondingMerchendiseRecords.trigger
+force:lightning-aura/force-app/main/default/triggers/UpdateCorrespondingMerchendiseRecords.trigger-meta.xml
+force:lightning-aura/force-app/main/default/pages/fileUpload.page-meta.xml
+force:lightning-aura/force-app/main/default/pages/fileUpload.page
+force:lightning-aura/force-app/main/default/pages/jobsearch.page
+force:lightning-aura/force-app/main/default/pages/jobsearch.page-meta.xml
+force:lightning-aura/force-app/main/default/pages/linkedinJavascriptAPi.page
+force:lightning-aura/force-app/main/default/pages/linkedinJavascriptAPi.page-meta.xml
