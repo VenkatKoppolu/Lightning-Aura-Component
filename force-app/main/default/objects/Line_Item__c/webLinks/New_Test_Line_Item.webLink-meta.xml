@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Test_Line_Item</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Test Line Item</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>$Lightning.use(&quot;c:Create_Line_Item&quot;, function() {
+          $Lightning.createComponent(&quot;ui:button&quot;,
+          { label : &quot;Press Me!&quot; },
+          &quot;lightning&quot;,
+          function(cmp) {
+            // do some stuff
+              doInit();
+          });
+        });</url>
+</WebLink>

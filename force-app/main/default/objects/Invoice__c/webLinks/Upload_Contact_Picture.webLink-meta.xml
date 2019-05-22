@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upload_Contact_Picture</fullName>
+    <availability>online</availability>
+    <description>used to upload contact picture on invoice object</description>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Upload Contact Picture</masterLabel>
+    <openType>sidebar</openType>
+    <page>UploadContactImageOnInvoice</page>
+    <protected>false</protected>
+</WebLink>
