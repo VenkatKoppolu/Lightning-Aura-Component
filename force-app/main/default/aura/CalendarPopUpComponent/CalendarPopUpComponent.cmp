@@ -1,4 +1,0 @@
-<aura:component controller="FullCalendarController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
-<!--<aura:handler name="init" value="{!this}" action="{!c.init}" /> -->
-Create  Availability
-</aura:component>
