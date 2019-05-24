@@ -1,0 +1,6 @@
+<aura:component >
+    <aura:registerEvent name="cmpEvent" type="c:messageEvent"/>
+    <aura:attribute name="dataMessage" type="String"/>
+    <lightning:input value="{!v.dataMessage}" onchange="{!c.sendMessageToReceiver}"/>
+	
+</aura:component>

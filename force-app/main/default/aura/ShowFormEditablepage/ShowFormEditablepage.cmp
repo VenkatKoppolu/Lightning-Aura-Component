@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+<c:ShowFormEditableComponent objectApi="Account_Event__c" fieldSet="Account_Event_Creation" columns="1" />	
+</aura:component>

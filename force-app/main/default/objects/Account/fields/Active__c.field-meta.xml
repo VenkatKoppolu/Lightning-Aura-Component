@@ -12,12 +12,10 @@
             <value>
                 <fullName>No</fullName>
                 <default>false</default>
-                <label>No</label>
             </value>
             <value>
                 <fullName>Yes</fullName>
                 <default>false</default>
-                <label>Yes</label>
             </value>
         </valueSetDefinition>
     </valueSet>

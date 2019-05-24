@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="DomainUtils">
+    
+    <aura:attribute name="sendMessageData" type="String" />
+    <aura:attribute name="baseDomain" type="String"/>
+    <aura:attribute name="queryStringParams" type="String"/>
+    <aura:attribute name="receiveMessageData" type="String"/>
+   <!-- <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>-->
+    <aura:handler name="render" value="{! this }" action="{! c.handleRender }"/>
+    
+    <!-- Embed visualforce page here -->
+    
+    <lightning:input type="text" value="{! v.sendMessageData }" />
+    <lightning:button label="send to VF Page" onclick="{! c.sendDataToVFPage }" />
+    <div>{!v.receiveMessageData}</div>
+    <iframe aura:id="toVFPage" src="{! 'https://'+ v.baseDomain + '/apex/receiveDataFromLtngCmp?id='+v.queryStringParams}" frameborder="0"/>
+</aura:component>
