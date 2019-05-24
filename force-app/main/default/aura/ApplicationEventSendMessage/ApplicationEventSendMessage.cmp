@@ -1,7 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
-    <aura:registerEvent name="AppEventSendMessage" type="c.applicationEventMessage"/>
-     <aura:attribute name="mesg" type="String"/>
-    <lightning:input type="text" label="Send Message" value="{!v.mesg}" />
-     <lightning:button label="Send"  onclick="{!c.sendMessageFromSender}" />
- 	
-</aura:component>
