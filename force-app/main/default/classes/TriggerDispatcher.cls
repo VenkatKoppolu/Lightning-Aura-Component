@@ -1,5 +1,5 @@
 public with sharing class TriggerDispatcher {
-    public static void Run(ITrigger handler){
+    public static void Run(ITriggerHandler handler){
         if (handler.IsDisabled())
             return;
         

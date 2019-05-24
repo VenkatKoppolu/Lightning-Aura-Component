@@ -1,4 +1,4 @@
-public interface ITrigger {
+public interface ITriggerHandler {
     void BeforeInsert(List<SObject> newObject);
     void BeforeUpdate(Map<Id,SObject> newObjectMap,Map<Id,SObject> oldObjectMap);
     void BeforeDelete(Map<Id,SObject> oldObjectMap);

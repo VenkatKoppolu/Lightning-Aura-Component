@@ -1,4 +1,4 @@
-public with sharing class AccountTriggerHandler implements ITrigger {
+public with sharing class AccountTriggerHandler implements ITriggerHandler {
     public static Boolean isDisabled = false;
     public Boolean IsDisabled() {
         if (HieraricalCustomSetting__c.getOrgDefaults() != NULL && HieraricalCustomSetting__c.getOrgDefaults().AccountTrigger__c) {
