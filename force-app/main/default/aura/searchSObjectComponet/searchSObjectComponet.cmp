@@ -1,0 +1,13 @@
+<aura:component controller="SearchController">
+        <aura:registerEvent name="searchComplete" type="c:SearchComponentEvent"/>
+
+    
+        <div onkeyup="{! c.doSearchOnKeyUp }">
+                <lightning:input
+                    aura:id="enter-search"
+                    name="enter-search"
+                    label="Search when user hits the 'enter' key"
+                    type="search"
+                />
+            </div>
+</aura:component>	
