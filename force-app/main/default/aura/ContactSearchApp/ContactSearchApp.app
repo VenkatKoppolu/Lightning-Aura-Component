@@ -1,6 +1,8 @@
 <aura:application extends="force:slds"  >
     <aura:attribute name="appContacts" type="SObject[]"/>
-    <aura:attribute name="columns" type="List" default="['ID','Name']"/>
+    <aura:attribute name="columns" type="List" default="[
+    {label: 'ID', fieldName: 'Id', type: 'text'},
+    {label: 'Name', fieldName: 'Name', type: 'text'}]"/>
   
         <c:searchSObjectComponet searchComplete="{!c.handleContactSearchComplete}"/>
       
