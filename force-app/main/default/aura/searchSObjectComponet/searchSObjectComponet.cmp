@@ -1,5 +1,6 @@
 <aura:component controller="SearchController">
-        <aura:registerEvent name="searchComplete" type="c:SearchComponentEvent"/>
+        <aura:registerEvent name="searchComplete" type="c:SearchComponentEvent"/><!--here name is used in the handler-->
+        <aura:registerEvent name="searchCompleteApplicationEvent" type="c:SearchApplicationEvent"/><!--here name is not used in the handler-->
         <aura:attribute name="sObjectInfo" type="String" required="true"/>
         <aura:attribute name="isRequired" type="Boolean" access="private" default="true"/>
         <aura:attribute name="isInFocus" type="Boolean" access="private" default="true"/>

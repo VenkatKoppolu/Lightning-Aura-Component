@@ -8,7 +8,8 @@
 
     },
     processingResponse: function (component, event, helper) {
-       helper.onContactSelection(component, event);
+       
+       helper.onRecordSelection(component, event);
 
     }
 })

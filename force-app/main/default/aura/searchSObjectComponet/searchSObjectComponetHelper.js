@@ -24,11 +24,22 @@
 
 
     },
-    onContactSelection:function(component, event){
+    onRecordSelection:function(component, event){
+        if(component.get('v.sObjectInfo')=='Contact'){
         var searchCompleteEvent = component.getEvent("searchComplete"); //this is the name used in register event
 
                 searchCompleteEvent.setParams({
                     records: component.get('v.searchRecords')
                 }).fire();
+        }
+        else if(component.get('v.sObjectInfo')=='Account'){
+            // Get the application event by using the
+        // e.<namespace>.<event> syntax
+        var appEvent = $A.get("e.c:SearchApplicationEvent");
+        appEvent.setParams({
+            records: component.get('v.searchRecords') 
+        });
+        appEvent.fire();
+        }
     }
 })
