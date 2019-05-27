@@ -4,7 +4,7 @@
         var records;
         var action = component.get('c.searchSobjectRecords');
         action.setParams({
-            SObjectInfo: 'Contact',
+            SObjectInfo: component.get('v.sObjectInfo'),
             SearchText: component.find('enter-search').get('v.value')
         });
         action.setCallback(this, function (response) {

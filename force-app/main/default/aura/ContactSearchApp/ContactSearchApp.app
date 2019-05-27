@@ -4,7 +4,7 @@
     {label: 'ID', fieldName: 'Id', type: 'text'},
     {label: 'Name', fieldName: 'Name', type: 'text'}]"/>
   
-        <c:searchSObjectComponet searchComplete="{!c.handleContactSearchComplete}"/>
+        <c:searchSObjectComponet searchComplete="{!c.handleContactSearchComplete}" sObjectInfo="Contact"/>
       
                 <lightning:datatable aura:id="contactList" 
                 keyField="id"
