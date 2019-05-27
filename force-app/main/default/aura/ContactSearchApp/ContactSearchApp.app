@@ -3,14 +3,21 @@
     <aura:attribute name="columns" type="List" default="[
     {label: 'ID', fieldName: 'Id', type: 'text'},
     {label: 'Name', fieldName: 'Name', type: 'text'}]"/>
-  
-        <c:searchSObjectComponet searchComplete="{!c.handleContactSearchComplete}" sObjectInfo="Contact"/>
+    <lightning:card footer="Card Footer" title="Hello">
+        <aura:set attribute="actions">
+            <c:searchSObjectComponet searchComplete="{!c.handleContactSearchComplete}" sObjectInfo="Contact"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <lightning:datatable aura:id="contactList" 
+            keyField="id"
+            data="{! v.appContacts }"
+            columns="{! v.columns }"
+            hideCheckboxColumn="true"/>
+        </p>
+    </lightning:card>
       
-                <lightning:datatable aura:id="contactList" 
-                keyField="id"
-                data="{! v.appContacts }"
-                columns="{! v.columns }"
-                hideCheckboxColumn="true"/>
+      
+            
             
 
 
