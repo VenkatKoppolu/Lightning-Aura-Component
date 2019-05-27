@@ -6,5 +6,9 @@
        helper.searchRecords(component, event, helper);
 
 
+    },
+    processingResponse: function (component, event, helper) {
+       helper.onContactSelection(component, event);
+
     }
 })

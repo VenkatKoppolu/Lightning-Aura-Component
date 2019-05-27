@@ -1,14 +1,83 @@
 <aura:component controller="SearchController">
         <aura:registerEvent name="searchComplete" type="c:SearchComponentEvent"/>
         <aura:attribute name="sObjectInfo" type="String" required="true"/>
+        <aura:attribute name="isRequired" type="Boolean" access="private" default="true"/>
+        <aura:attribute name="isInFocus" type="Boolean" access="private" default="true"/>
+        <aura:attribute name="searchRecords" type="List" access="public" default="[]"/>
+        <aura:attribute name="choosenByCursorIndex" type="String" access="private" default="0" description="Index of search value that was selected by up and down arrows" />
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <div class="slds-combobox_container">
+                    <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                        <div class="slds-combobox__form-element slds-input-has-icon" role="none" onkeyup="{!c.doSearchOnKeyUp}">
+                            <lightning:input required="{!v.isRequired}" aura:id="enter-search" name="enter-search" variant="label-hidden" type="search" messageWhenValueMissing="Error Occured "/>
+                        </div>
+                        <aura:if isTrue="{! and (!empty(v.searchRecords), v.isInFocus)}">
+                                <div class="listContent">
+                                        <ul class="lookup__list  visible" role="presentation">
+                                                <aura:iteration items="{!v.searchRecords}" var="obj" indexVar="index">
+                                            <li class="lookup__item MRU_GLOBAL slds-text-link--reset slds-grid slds-grid--vertical-align-center slds-truncate default uiAutocompleteOption forceSearchInputDesktopOption"
+                                                role="presentation"
+                                                data-aura-class="uiAutocompleteOption forceSearchInputDesktopOption" data-interactive-uid="8"><a
+                                                    class="MRU_GLOBAL slds-text-link--reset slds-grid slds-grid--vertical-align-center slds-truncate"
+                                                    role="option" id="742:0"  href="javascript:void(0);">
+                                                    <div class="slds-icon_container" >
+                                                        <div class="mruIcon slds-icon slds-icon--small slds-m-vertical--xx-small slds-m-right--small slds-m-left--none forceEntityIcon"
+                                                            style="background-color: #7F8DE1" 
+                                                            data-aura-class="forceEntityIcon"><span class="uiImage"
+                                                                data-aura-class="uiImage"><img
+                                                                    src="https://curious-moose-2ve2wo-dev-ed.my.salesforce.com/img/icon/t4v35/standard/contact_120.png"
+                                                                    class="icon " alt="" title=""/></span></div>
+                                                    </div>
+                                                    <div class="slds-truncate" ><span
+                                                            class="mruName slds-text-body--regular slds-text-color--default slds-truncate slds-show"
+                                                            title="{!obj.Name}"  id="{!obj.Name + ':' + index}" onclick="{!c.processingResponse}">
+                                                            <!--<div dir="ltr" data-aura-rendered-by="758:0" class="uiOutputRichText"
+                                                                data-aura-class="uiOutputRichText"><mark class="data-match"
+                                                                    data-aura-rendered-by="759:0">D</mark></div>-->{!obj.Name}
+                                                        </span>
+                                                        <div class="slds-clearfix mruDescription slds-text-heading--label-normal slds-show slds-truncate"
+                                                            >
+                                                            <div class="slds-float--left uiOutputRichText" dir="ltr" 
+                                                                data-aura-class="uiOutputRichText">{!v.sObjectInfo}</div>
+                                                            <!--render facet: 765:0-->
+                                                            <div class="slds-float--none slds-truncate uiOutputRichText" dir="ltr"
+                                                                 data-aura-class="uiOutputRichText">
+                                                                <!--render facet: 769:0-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a></li>
+                                            </aura:iteration>
+                                        </ul>
+                                        <div class="emptyListContent" ><span class="assistiveText" aria-live="polite"
+                                                >No quick results. Type at least 2 characters and press ENTER to
+                                                search</span></div>
+                                        <div class="loadingIndicator" >
+                                            <div ></div>
+                                        </div>
+                                    </div>
 
-    
-        <div onkeyup="{! c.doSearchOnKeyUp }">
-                <lightning:input
-                    aura:id="enter-search"
-                    name="enter-search"
-                    label="Search when user hits the 'enter' key"
-                    type="search"
-                />
+
+
+
+                            <!--<div id="listbox-id-1" class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid dropdown-visibility" role="listbox">
+                                <ul class="slds-listbox slds-listbox_vertical">
+                                    
+                                        <li class="{! index == v.choosenByCursorIndex ?  'slds-listbox__item selected-search-option' : 'slds-listbox__item'}" >
+                                            <div class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta">
+                                                <span class="slds-media__body">
+                                                    <span class="slds-listbox__option-text slds-listbox__option-text_entity" >{!obj.Name}</span>
+                                                </span>
+                                            </div>
+                                        </li>
+                                   
+                                </ul>
+                            </div>-->
+                        </aura:if>
+                    </div>
+                </div>
             </div>
+        </div>
+    
 </aura:component>	

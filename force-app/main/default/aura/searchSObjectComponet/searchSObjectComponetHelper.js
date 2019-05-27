@@ -1,6 +1,6 @@
 ({
-    searchRecords: function (component, event, helper) {
-        debugger;
+    searchRecords: function (component) {
+        
         var records;
         var action = component.get('c.searchSobjectRecords');
         action.setParams({
@@ -10,11 +10,7 @@
         action.setCallback(this, function (response) {
             if (response.getState() == 'SUCCESS') {
                 records = response.getReturnValue();
-                var searchCompleteEvent = component.getEvent("searchComplete"); //this is the name used in register event
-
-                searchCompleteEvent.setParams({
-                    records: records
-                }).fire();
+                component.set('v.searchRecords',records);
 
             } else if (response.getState() == 'ERROR') {
 
@@ -27,5 +23,12 @@
 
 
 
+    },
+    onContactSelection:function(component, event){
+        var searchCompleteEvent = component.getEvent("searchComplete"); //this is the name used in register event
+
+                searchCompleteEvent.setParams({
+                    records: component.get('v.searchRecords')
+                }).fire();
     }
 })
