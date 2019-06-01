@@ -7,19 +7,20 @@
         "Contact",
             null,
             false,
-            $A.getCallback(function(){
+            $A.getCallback(function(){try{
                
                 var error = component.get("v.newContactError");
                 var rec = component.get("v.newContact");
                 if(error || (rec === null)){
-                    //console.log(error);
+                    console.log(error); 
                 }else{          
-                   // console.log(rec.sobjectType);
+                    console.log(rec);
                 }
-            })
-        
-        
-        );			
+            }catch(ex){
+
+                debugger;
+            }
+        }));			
 	},
     goToStepTwo : function(component, event, helper) {
         helper.toggleOneAndTwoSteps(component);
