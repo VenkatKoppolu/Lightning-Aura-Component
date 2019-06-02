@@ -42,21 +42,33 @@
 
              <div aura:id="stepOne">
              	<lightning:input value="{!v.simpleNewContact.Name}" label="Contact Name"/><br />
-                 <lightning:button label="Next" onclick="{!c.goToStepTwo}" variant="brand"/> 
+               
              </div>
              <div aura:id="stepTwo">
                  <lightning:input value="{!v.simpleNewContact.Description}" label="Description"/> <br />
-                 <lightning:button label="Back" onclick="{!c.goBackToStepOne}" />
-                 <lightning:button label="Next" onclick="{!c.goToStepThree}" variant="brand"/> 
+               
              </div>
              <div aura:id="stepThree">
              	<lightning:input value="{!v.simpleNewContact.Phone}" label="Contact Number"/> <br /> 
-                 <lightning:button label="Back" onclick="{!c.goBackToStepTwo}"/>
-                 <lightning:button label="Save" onclick="{!c.saveContactRecord}" variant="brand"/> 
+                  
              </div>
              
                        
          </div>
+         <footer class="slds-modal__footer">
+                <div aura:id="stepOneFooter">
+                        <lightning:button label="Next" onclick="{!c.goToStepTwo}" variant="brand"/> 
+                </div>
+                <div aura:id="stepTwoFooter">
+                        <lightning:button label="Back" onclick="{!c.goBackToStepOne}" />
+                        <lightning:button label="Next" onclick="{!c.goToStepThree}" variant="brand"/> 
+                </div>
+                <div aura:id="stepThreeFooter">
+                        <lightning:button label="Back" onclick="{!c.goBackToStepTwo}"/>
+                        <lightning:button label="Save" onclick="{!c.saveContactRecord}" variant="brand"/>
+                </div>
+             
+        </footer>
          
       </div>
    </section>
