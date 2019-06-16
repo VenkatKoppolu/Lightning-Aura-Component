@@ -1,0 +1,27 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">  
+<aura:handler name="formsubmit" event="c:FormSubmit" action="{!c.onFormSubmit}" phase="capture"/>
+<lightning:card class="bottomMargin">
+        <aura:set attribute="title">
+           <!-- <lightning:icon iconName="utility:connected_apps" size="small"/>-->
+            Find a Boat
+        </aura:set>
+        <!--<aura:set attribute="footer">
+            <lightning:badge label="Tag1"/>
+            <lightning:badge label="Tag2"/>
+            <lightning:badge label="Tag3"/>
+        </aura:set>-->
+        <c:BoatSearchForm/>
+    </lightning:card>
+    <lightning:card>
+        <aura:set attribute="title">
+             <!--  <lightning:icon iconName="utility:connected_apps" size="small"/>-->
+            Matching Boats
+        </aura:set>
+       <!-- <aura:set attribute="footer">
+            <lightning:badge label="Tag1"/>
+            <lightning:badge label="Tag2"/>
+            <lightning:badge label="Tag3"/>
+        </aura:set>-->
+        <c:BoatSearchResults aura:id="boatSearchResultsID"/>
+    </lightning:card>
+</aura:component>	

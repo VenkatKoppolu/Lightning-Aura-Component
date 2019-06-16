@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" controller="BoatSearchResults">
+    <aura:attribute name="boatTypeId" type="String"/>  
+<aura:attribute type="List" name="boats"/>
+<aura:attribute name="selectedBoatId" type="String"/>
+<aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+<!--<aura:handler event="c:FormSubmit" action="{!c.doSearch}"/>
+removed this because it is handled by the parent component BoatSearch.cmp
+-->
+
+<!-- set up the aura:method for search -->
+<aura:method name="search" description="accepts boatTypeId and executes search to get boats data">
+<aura:attribute name="boatTypeId" type="Id"/>
+</aura:method>
+<!--component event: The name given here should match the one given on registerEvent in BoatTitle-->
+<aura:handler name="SelectedBoatEvent" event="c:BoatSelect" action="{!c.onBoatSelect}"/>
+
+<lightning:layout title="Find a Boat" horizontalAlign="center" multipleRows="true">
+<aura:iteration items="{!v.boats}" var="boat">
+    <lightning:layoutItem flexibility="auto" padding="horizontal-medium">
+      <aura:if isTrue="{!boat.Id==v.selectedBoatId}" >
+          <c:BoatTile boatRecord="{!boat}" selected="true"/>
+        <aura:set attribute="else">
+            <c:BoatTile boatRecord="{!boat}"/>
+
+        </aura:set>
+      </aura:if>
+  
+  </lightning:layoutItem>
+
+</aura:iteration>
+<aura:if isTrue="{!v.boats.length==0}">
+<lightning:layoutItem class="slds-align_absolute-center" flexibility="auto" padding="around-small">   
+<ui:outputText value="No boats found" />
+</lightning:layoutItem>
+</aura:if>
+</lightning:layout>
+</aura:component>	

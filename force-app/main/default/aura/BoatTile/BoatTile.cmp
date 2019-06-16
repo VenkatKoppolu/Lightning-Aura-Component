@@ -1,0 +1,15 @@
+<aura:component>
+  <aura:attribute name="selected" type="Boolean" default="false"/>
+    <aura:attribute type="Boat__c" name="boatRecord" />
+    <aura:registerEvent name="SelectedBoatEvent" type="c:BoatSelect"/><!--component event: The name given here should match the one given on handler in BoatSearchResults-->
+    <aura:registerEvent name="BoatSelectedDetailsEvent" type="c:BoatSelected"/><!--Application event: used in BoatDetails Component-->
+    <lightning:button class="{!(v.selected)?'tile selected':'tile'}" label="{!v.boatRecord.Name}" onclick="{!c.onBoatClick}"><!--class="{!'tile'+(v.selected)?' selected':''+''}">-->
+        <div style="{!'background-image:url(\''+v.boatRecord.Picture__c+'\');'}" class="innertile">
+          <div class="lower-third">
+           <h1 class="slds-truncate">{!v.boatRecord.Contact__r.Name}</h1>
+          </div>
+        </div>
+    </lightning:button>
+</aura:component>
+
+
