@@ -34,4 +34,4 @@ removed this because it is handled by the parent component BoatSearch.cmp
 </lightning:layoutItem>
 </aura:if>
 </lightning:layout>
-</aura:component>	
+</aura:component>

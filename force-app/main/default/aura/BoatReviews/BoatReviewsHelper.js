@@ -6,6 +6,7 @@
         });
         action.setCallback(this, function (response) {
             var state = response.getState();
+            debugger;
             if (state == 'SUCCESS') {
                 component.set('v.boatReviews', response.getReturnValue())
 

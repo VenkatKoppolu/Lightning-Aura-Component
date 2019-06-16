@@ -1,5 +1,4 @@
-<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,
-flexipage:availableForRecordHome,force:hasRecordId" controller="BoatReviews">
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" controller="BoatReviews">
 
 
         <aura:attribute name="boat" type="Boat__c" access="public" />

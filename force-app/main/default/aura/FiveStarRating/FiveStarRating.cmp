@@ -11,4 +11,4 @@
     <aura:handler name='change' value="{!v.value}" action="{!c.onValueChange}" />
     <ul aura:id='ratingarea' class="{!v.readonly ? 'readonly c-rating' : 'c-rating' }" />
 
-</aura:component>	
+</aura:component>

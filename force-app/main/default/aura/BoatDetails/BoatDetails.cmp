@@ -26,4 +26,4 @@
                         </lightning:tab>
                 </lightning:tabset>
         </aura:if>
-</aura:component>	
+</aura:component>

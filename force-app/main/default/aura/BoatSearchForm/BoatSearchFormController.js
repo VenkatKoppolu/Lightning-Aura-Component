@@ -11,7 +11,7 @@
 
     },
     onFormSubmit: function(component, event, helper) {
-        var boatId=component.find('selectedBoatValueId').get('v.value');
+        var boatId=component.find('selectedBoatValueId').get('v.value');debugger;
         var appEvent=component.getEvent("formSubmit");
         //var appEvent = $A.get("e.c:FormSubmit");
         appEvent.setParams({
