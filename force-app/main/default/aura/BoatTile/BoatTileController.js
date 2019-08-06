@@ -21,5 +21,17 @@
 
         });
         selectedBoatDetailEvent.fire();
+
+        var showBoatMapEvent=$A.get('e.c:PlotMapMarker');
+        //console.log('@@'+component.get('v.boatRecord').toString());
+        var boat = component.get("v.boatRecord"); 
+        showBoatMapEvent.setParams({
+            "sObjectId":boat.Id,
+            "lat":boat.Geolocation__latitude__s,
+            "long":boat.Geolocation__longitude__s,
+            "label":boat.Name
+
+        });
+        showBoatMapEvent.fire();
     }
 })
