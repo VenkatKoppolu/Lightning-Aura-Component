@@ -7,3 +7,5 @@
 .sfdx/orgs/subbushiningsun@curious-raccoon-rcxiqd.com/metadataTypeInfos.json
 .sfdx/sfdx-config.json
 .sfdx/tools/apex.db
+.vscode/settings.json
+.sfdx/tools/apex.db
